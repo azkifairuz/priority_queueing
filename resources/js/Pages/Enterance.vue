@@ -10,8 +10,9 @@
         
         
         <div class="door-container">
-        
-          <img :src="PintuImg" alt="Door" class="door-image">
+          <Link href="/home">
+            <img :src="PintuImg" alt="Door" class="door-image">
+          </Link>
           
           
             <img
@@ -31,6 +32,7 @@
   import PintuImg from '../../images/pintu.png';
   import GagangImg from '../../images/gagang-pintu.webp';
   import Logo from '../../images/LuxuryLogo.webp';
+  import { Link } from '@inertiajs/vue3'
 
   const isRotated = ref(false)
 

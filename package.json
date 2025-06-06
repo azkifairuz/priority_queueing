@@ -8,12 +8,13 @@
     "devDependencies": {
         "axios": "^1.6.4",
         "laravel-vite-plugin": "^1.0",
+        "tailwindcss": "^4.1.7",
+        "tailwindcss-cli": "^0.1.2",
         "vite": "^5.0"
     },
     "dependencies": {
         "@inertiajs/vue3": "^2.0.11",
         "@tailwindcss/vite": "^4.1.7",
-        "@vitejs/plugin-vue": "^5.2.4",
-        "tailwindcss": "^4.1.7"
+        "@vitejs/plugin-vue": "^5.2.4"
     }
 }
