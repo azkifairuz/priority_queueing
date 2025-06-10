@@ -14,7 +14,7 @@ import { Link } from '@inertiajs/vue3'
             <Link href="/contact">Contact</Link>
         </div>
     </header>
-    <article>
+    <article class="overflow-hidden">
       <slot />
     </article>
   </main>
