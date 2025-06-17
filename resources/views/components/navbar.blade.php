@@ -9,14 +9,13 @@
                 <button type="button" class="sidebar-mobile-toggle d-flex !leading-[0]">
                     <iconify-icon icon="heroicons:bars-3-solid" class="icon !text-[30px]"></iconify-icon>
                 </button>
-                <form class="navbar-search">
+                {{-- <form class="navbar-search">
                     <input type="text" name="search" placeholder="Search">
                     <iconify-icon icon="ion:search-outline" class="icon"></iconify-icon>
-                </form>
-
+                </form> --}}
             </div>
         </div>
-        <div class="col-auto">
+        {{-- <div class="col-auto">
             <div class="flex flex-wrap items-center gap-3">
                 <button type="button" id="theme-toggle" class="w-10 h-10 bg-neutral-200 dark:bg-neutral-700 dark:text-white rounded-full flex justify-center items-center">
                     <span id="theme-toggle-dark-icon" class="hidden">
@@ -357,6 +356,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>

@@ -7,13 +7,13 @@
             {{-- <img src="{{ asset('assets/images/logo.png') }}" alt="site logo" class="light-logo">
             <img src="{{ asset('assets/images/logo-light.png') }}" alt="site logo" class="dark-logo">
             <img src="{{ asset('assets/images/logo-icon.png') }}" alt="site logo" class="logo-icon"> --}}
-            Luxury
+            Priority queue 
         </a>
     </div>
     <div class="sidebar-menu-area">
         <ul class="sidebar-menu" id="sidebar-menu">
             <li>
-                <a href="{{ route('index3') }}">
+                <a href="{{ route('index') }}">
                     <iconify-icon icon="material-symbols:map-outline" class="menu-icon"></iconify-icon>
                     <span>Dashboard</span>
                 </a>
@@ -78,7 +78,7 @@
                     <span>Kanban</span>
                 </a>
             </li> --}}
-            <li class="dropdown">
+            {{-- <li class="dropdown">
                 <a href="javascript:void(0)">
                     <iconify-icon icon="hugeicons:invoice-03" class="menu-icon"></iconify-icon>
                     <span>Master</span>
@@ -100,23 +100,17 @@
                         <a href="{{ route('role-list') }}"><i class="ri-circle-fill circle-icon text-danger-600 w-auto"></i> Role</a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
             <li>
-                <a href="{{ route('kanban') }}">
+                <a href="{{ route('patient_queue') }}">
                     <iconify-icon icon="material-symbols:map-outline" class="menu-icon"></iconify-icon>
-                    <span>Consignment</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('kanban') }}">
-                    <iconify-icon icon="material-symbols:map-outline" class="menu-icon"></iconify-icon>
-                    <span>Customer</span>
+                    <span>Patient Queue</span>
                 </a>
             </li>
             <li>
                 <a href="{{ route('invoiceEdit') }}">
                     <iconify-icon icon="material-symbols:map-outline" class="menu-icon"></iconify-icon>
-                    <span>Transaksi</span>
+                    <span>Triages</span>
                 </a>
             </li>
             {{-- <li class="dropdown">

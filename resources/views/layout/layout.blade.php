@@ -1,6 +1,6 @@
 <!-- meta tags and other links -->
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" >
 
 <x-head />
 
@@ -22,13 +22,13 @@
             <!-- ..::  header area end ::.. -->
 
             @yield('content')
-        
         </div>
         <!-- ..::  footer  start ::.. -->
         <x-footer />
         <!-- ..::  footer area end ::.. -->
 
     </main>
+    @yield('modals')
 
     <!-- ..::  scripts  start ::.. -->
     <x-script  script='{!! isset($script) ? $script : "" !!}' />

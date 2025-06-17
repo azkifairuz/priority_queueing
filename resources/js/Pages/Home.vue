@@ -6,6 +6,7 @@ import BagHumanoid from '../../images/baghumanoid.png';
 import accessories1 from '../../images/accessories1.png';
 import bag1 from '../../images/bag1.png';
 import shoes1 from '../../images/shoes1.png';
+import  brand1 from '../../images/brand/1.png';
 
 let items = Array(30).fill('NEW ARRIVAL!');
 </script>
@@ -21,7 +22,7 @@ let items = Array(30).fill('NEW ARRIVAL!');
         <h1 class="text-[40px]/[60px] mb-[32px] font-dawning ">
           Vintage is Rise for the picking. April will be more exciting!
         </h1>
-        <button class="bg-primary px-3 py-2 text-canvas text-center font-bold text-[16px] w-[162px]">
+        <button class="bg-primary px-3 py-3 cursor-pointer text-canvas text-center font-bold text-[16px] w-[162px] font-josefin">
           SHOP NOW
         </button>
       </div>
@@ -38,7 +39,7 @@ let items = Array(30).fill('NEW ARRIVAL!');
       <div class="relative z-10 rotate-[-1.5deg] bg-primary">
         <div class="absolute bottom-[-50px] left-0 w-full h-[50px] bg-secondary z-0"></div>
 
-        <div class="py-4 px-6 flex whitespace-nowrap text-white font-bold text-lg animate-marquee" style="gap: 48px;">
+        <div class="py-4 px-6 flex whitespace-nowrap text-white font-bold text-lg animate-marquee font-josefin" style="gap: 48px;">
           <span v-for="(item, index) in items" :key="index">{{ item }}</span>
         </div>
       </div>
@@ -119,7 +120,7 @@ let items = Array(30).fill('NEW ARRIVAL!');
       <div class="relative z-10 rotate-[1.9deg] bg-primary">
         <div class="absolute bottom-[61px] left-0 w-full h-[62px] bg-secondary z-0"></div>
 
-        <div class="py-4 px-6 flex whitespace-nowrap text-white font-bold text-lg animate-marquee" style="gap: 48px;">
+        <div class="py-4 px-6 flex whitespace-nowrap text-white font-bold text-lg animate-marquee font-josefin" style="gap: 48px;">
           <span v-for="(item, index) in items" :key="index">{{ item }}</span>
         </div>
 
@@ -220,15 +221,15 @@ let items = Array(30).fill('NEW ARRIVAL!');
       <div class="relative z-10 rotate-[1.5deg] bg-primary">
         <div class="absolute bottom-[-50px] left-0 w-full h-[50px]  z-0"></div>
 
-        <div class="py-4 px-6 flex whitespace-nowrap text-white font-bold text-lg animate-marquee" style="gap: 48px;">
+        <div class="py-4 px-6 flex whitespace-nowrap text-white font-bold text-lg animate-marquee font-josefin" style="gap: 48px;">
           <span v-for="(item, index) in items" :key="index">{{ item }}</span>
         </div>
       </div>
 
 
-      <div class="flex justify-center items-center z-0 py-24 min-h-[877px]">
+      <div class="flex  z-0 py-24 min-h-[877px]">
         
-            <div class="relative w-[780px]  bg-secondary rounded-3xl px-[48px] py-[19px]">
+            <div class="relative w-[780px]  ml-[520px] bg-secondary rounded-3xl px-[48px] py-[19px]">
                <div class="flex items-center justify-center gap-[52px]">
                   <div
                     v-for="n in 8"
@@ -242,7 +243,7 @@ let items = Array(30).fill('NEW ARRIVAL!');
                <p class="text-black font-[400] text-[28px] font-dawning mt-10 ">
                 Thank You
                </p>
-               <div class="absolute bottom-[-20px] right-[75px] flex gap-4 capitalize font-bold text-[16px]">
+               <div class="absolute bottom-[-20px] right-[75px] flex gap-4 uppercase font-bold text-[16px]">
                 <button class="px-4 w-[215px] py-3 bg-white text-primary cursor-pointer  shadow">Read Guideline</button>
                 <button class="px-4 py-3 bg-primary cursor-pointer  w-[215px] text-white  shadow">Upload Product</button>
                </div>
@@ -269,11 +270,46 @@ let items = Array(30).fill('NEW ARRIVAL!');
       <div class="relative z-10 rotate-[-1.9deg] bg-primary">
         <div class="absolute bottom-[61px] left-0 w-full h-[62px]  z-0"></div>
 
-        <div class="py-4 px-6 flex whitespace-nowrap text-white font-bold text-lg animate-marquee" style="gap: 48px;">
+        <div class="py-4 px-6 flex whitespace-nowrap text-white font-bold text-lg animate-marquee font-josefin" style="gap: 48px;">
           <span v-for="(item, index) in items" :key="index">{{ item }}</span>
         </div>
 
       </div>
+    </div>
+    <div class="w-full p-6 mt-10 flex justify-center items-center flex-col gap-[98px]">
+      <div class="flex justify-center items-center gap-[48px]">
+        <img :src="brand1" alt="Kacamata" />
+        <img :src="brand1" alt="Kacamata" />
+        <img :src="brand1" alt="Kacamata" />
+        <img :src="brand1" alt="Kacamata" />
+        
+      </div>
+      <div class="flex justify-center items-center gap-[48px]">
+        <img :src="brand1" alt="Kacamata" />
+        <img :src="brand1" alt="Kacamata" />
+        <img :src="brand1" alt="Kacamata" />
+        <img :src="brand1" alt="Kacamata" />
+      </div>
+
+    </div>
+    <div class="w-full bg-primary p-[52px] text-center">
+      <h1 class="uppercase font-josefin text-white text-[62px] font-bold">Available brands</h1>
+    </div>
+      <div class="w-full p-6 mt-10 flex justify-center items-center flex-col gap-[98px]">
+      <div class="flex justify-center items-center gap-[48px]">
+        <img :src="brand1" alt="Kacamata" />
+        <img :src="brand1" alt="Kacamata" />
+        <img :src="brand1" alt="Kacamata" />
+        <img :src="brand1" alt="Kacamata" />
+        
+      </div>
+      <div class="flex justify-center items-center gap-[48px]">
+        <img :src="brand1" alt="Kacamata" />
+        <img :src="brand1" alt="Kacamata" />
+        <img :src="brand1" alt="Kacamata" />
+        <img :src="brand1" alt="Kacamata" />
+      </div>
+
     </div>
   </Layout>
 </template>

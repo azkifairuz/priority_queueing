@@ -114,9 +114,9 @@ Route::prefix('admin')->middleware(['web'])->group(function () {
     Route::prefix('dashboard')->group(function () {
         Route::controller(DashboardController::class)->group(function () {
             Route::get('/index', 'index')->name('index');
-            Route::get('/index-2', 'index2')->name('index2');
-            Route::get('/index-3', 'index3')->name('index3');
-            Route::get('/index-4', 'index4')->name('index4');
+            Route::get('/patient_queue', 'index2')->name('patient_queue');
+            Route::post('/add-queue', 'store')->name('add_queue');
+            Route::post('/change-state', 'updateQueueState')->name('change_state');
             Route::get('/index-5','index5')->name('index5');
             Route::get('/index-6','index6')->name('index6');
             Route::get('/index-7','index7')->name('index7');

@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -9,6 +10,8 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
     --font-dawning: 'Dawning of a New Day', cursive, sans-serif;
+    --font-josefin: 'Josefin Sans', cursive, sans-serif;
+
     --color-mint-500: oklch(0.72 0.11 178);
     --color-canvas:#fff;
     --color-primary:#A41F24;
@@ -17,6 +20,12 @@
 @font-face {
     font-family: 'Dawning of a New Day';
     src: url('../fonts/DawningofaNewDay.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
