@@ -108,7 +108,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('invoiceEdit') }}">
+                <a href="{{ route('triages.index') }}">
                     <iconify-icon icon="material-symbols:map-outline" class="menu-icon"></iconify-icon>
                     <span>Triages</span>
                 </a>

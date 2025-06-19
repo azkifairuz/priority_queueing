@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\PatientQueue;
 use App\Models\Patient;
 use App\Models\Triages;
+use App\Models\Account;
 use Illuminate\Support\Facades\Log;
-
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 class DashboardController extends Controller
 {
 
@@ -135,7 +137,38 @@ class DashboardController extends Controller
     {
         return view('dashboard/index4');
     }
+    public function login(Request $request)
+    {
+        $request->validate([
+            'username' => 'required',
+            'password' => 'required'
+        ]);
 
+        $account = Account::where('username', $request->username)->first();
+
+        if (!$account || !Hash::check($request->password, $account->password)) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Username atau password salah!'
+            ], 401);
+        }
+
+        // Simpan ke session (tanpa Laravel Auth default)
+        Session::put('account_id', $account->id);
+        Session::put('account_role', $account->role);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Login berhasil!',
+            'redirect' => '/admin' // ganti sesuai route dashboard kamu
+        ]);
+    }
+
+    public function logout()
+    {
+        Session::flush();
+        return redirect('/');
+    }
     public function index5()
     {
         return view('dashboard/index5');

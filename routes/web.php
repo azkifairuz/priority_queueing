@@ -7,6 +7,8 @@ use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\ComponentspageController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TriageController;
+
 use App\Http\Controllers\FormsController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\SettingsController;
@@ -20,11 +22,14 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return Inertia::render('Home');
 });
+Route::post('/login', [DashboardController::class, 'login']);
+Route::post('/logout', [DashboardController::class, 'logout']);
 // Admin (Blade)
 Route::prefix('admin')->middleware(['web'])->group(function () {
     Route::controller(DashboardController::class)->group(function () {
         Route::get('/', 'index')->name('index');
     });
+    Route::resource('triages', TriageController::class);
 
     Route::controller(HomeController::class)->group(function () {
         Route::get('calendar-Main','calendarMain')->name('calendarMain');
@@ -124,7 +129,7 @@ Route::prefix('admin')->middleware(['web'])->group(function () {
             Route::get('/index-9','index9')->name('index9');
         });
     });
-
+    
     // Forms
     Route::prefix('forms')->group(function () {
         Route::controller(FormsController::class)->group(function () {
