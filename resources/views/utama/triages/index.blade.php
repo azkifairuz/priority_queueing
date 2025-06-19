@@ -9,11 +9,7 @@
 <div class="card border-0 overflow-hidden h-full">
     <div class="card-header flex justify-between items-center mb-4">
         <h2 class="text-2xl font-semibold text-neutral-900 dark:text-white">Triage List</h2>
-        <div class="space-x-2">
-            {{-- <a href="{{ route('triages.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                + Add Triage
-            </a> --}}
-        </div>
+        
     </div>
 
     <div class="card-body">
@@ -25,7 +21,6 @@
                         <th>Name</th>
                         <th>Priority Score</th>
                         <th>Description</th>
-                        {{-- <th class="!rounded-e-none">Aksi</th> --}}
                     </tr>
                 </thead>
                 <tbody>
@@ -35,21 +30,7 @@
                         <td class="px-6 py-4 text-sm text-gray-900 dark:text-white">{{ $triage->name }}</td>
                         <td class="px-6 py-4 text-sm text-gray-900 dark:text-white">{{ $triage->priority_score }}</td>
                         <td class="px-6 py-4 text-sm text-gray-900 dark:text-white">{{ $triage->description }}</td>
-                        {{-- <td class="px-6 py-4 text-sm">
-                            <div class="flex space-x-2">
-                                <a href="{{ route('triages.edit', $triage->id) }}" class="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 text-xs rounded">
-                                    Edit
-                                </a>
-
-                                <form action="{{ route('triages.destroy', $triage->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus triage ini?')">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 text-xs rounded">
-                                        Delete
-                                    </button>
-                                </form>
-                            </div>
-                        </td> --}}
+                        
                     </tr>
                     @empty
                     <tr>

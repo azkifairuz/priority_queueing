@@ -77,7 +77,7 @@ const password = ref('')
 const submitLogin = async () => {
   try {
     const response = await axios.post('/login', {
-      username: email.value,     // Ganti label "email" di input juga jadi "username"
+      username: email.value,     
       password: password.value,
     })
 

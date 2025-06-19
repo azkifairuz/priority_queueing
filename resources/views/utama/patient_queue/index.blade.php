@@ -58,10 +58,14 @@
                                 {{ $queue->state }}
                             </span>
                         </td>
-                        <td class="px-6 py-4 text-sm text-blue-600 dark:text-blue-400">
-                            <a href="#">Lihat</a>
-                        </td>
-                      
+                            <td class="px-6 py-4 text-sm text-blue-600 dark:text-blue-400">
+                                <button
+                                    onclick='showPatientDetail(@json($queue->patient))'
+                                    class="hover:underline"
+                                >
+                                    Lihat
+                                </button>
+                            </td>
                         <td class="px-6 py-4 text-sm">
                             <div class="flex space-x-2">
                                 <form action="{{ route('change_state') }}" method="POST">

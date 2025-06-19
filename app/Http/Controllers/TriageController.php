@@ -12,7 +12,6 @@ class TriageController extends Controller
     {
         $triages = Triages::all();
         return view('utama.triages.index', compact('triages'));
-        // Atau: return Inertia::render('Triages/Index', ['triages' => $triages]);
     }
 
     // Store - Create new triage

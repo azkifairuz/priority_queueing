@@ -93,7 +93,23 @@
         </form>
     </div>
 </div>
+<div id="viewPatientModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+    <div class="dark:bg-neutral-800 bg-neutral-100 dark:text-white p-6 rounded-lg max-w-3xl mx-auto w-full">
+        <h3 class="text-lg font-semibold mb-4 text-neutral-900 dark:text-white">Patient Details</h3>
+        
+        <div class="space-y-2">
+            <div><strong>Full Name:</strong> <span id="viewPatientName">-</span></div>
+            <div><strong>Age:</strong> <span id="viewPatientAge">-</span></div>
+            <div><strong>Gender:</strong> <span id="viewPatientGender">-</span></div>
+            <div><strong>NIK:</strong> <span id="viewPatientNIK">-</span></div>
+            <div><strong>Address:</strong> <span id="viewPatientAddress">-</span></div>
+        </div>
 
+        <div class="mt-6 flex justify-end">
+            <button type="button" onclick="closeModal('viewPatientModal')" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Close</button>
+        </div>
+    </div>
+</div>
 
 
 <script>
@@ -135,5 +151,16 @@
     function backStepp() {
         document.getElementById('step2').classList.add('hidden');
         document.getElementById('step1').classList.remove('hidden');
+    }
+    function showPatientDetail(patient) {
+        console.log("ke click");
+        
+        document.getElementById("viewPatientName").innerText = patient.full_name || '-';
+        document.getElementById("viewPatientAge").innerText = patient.age || '-';
+        document.getElementById("viewPatientGender").innerText = patient.gender || '-';
+        document.getElementById("viewPatientNIK").innerText = patient.nik || '-';
+        document.getElementById("viewPatientAddress").innerText = patient.address || '-';
+
+        document.getElementById("viewPatientModal").classList.remove('hidden');
     }
     </script>
