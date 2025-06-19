@@ -3,7 +3,7 @@
 
     <!-- Navbar -->
     <nav class="bg-white shadow-md px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-blue-600">AntrianRS Admin</h1>
+      <h1 class="text-2xl font-bold text-blue-600">AntrianUGD Admin</h1>
       <button @click="showLogin = true" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
         Login
       </button>
@@ -13,7 +13,7 @@
     <div class="w-full h-[400px] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1626315869436-d6781ba69d6e?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
       <div class="w-full h-full bg-black bg-opacity-40 flex items-center justify-center">
         <h2 class="text-white text-4xl md:text-5xl font-bold text-center">
-          Sistem Antrian Prioritas Rumah Sakit
+          Sistem Antrian Prioritas UGD
         </h2>
       </div>
     </div>
