@@ -23,22 +23,17 @@ class TriageController extends Controller
             'description' => 'nullable|string',
         ]);
 
-        $triage = Triages::create($validated);
+        Triages::create($validated);
 
-        return response()->json([
-            'message' => 'Triage created successfully.',
-            'data' => $triage,
-        ]);
+        return redirect()->route('triages.index')->with('success', 'Triage created successfully.');
     }
 
-    // Show - Get a single triage by ID
     public function show($id)
     {
         $triage = Triages::findOrFail($id);
-        return response()->json($triage);
+        return view('utama.triages.show', compact('triage')); // Buatkan view show kalau dibutuhkan
     }
 
-    // Update - Update existing triage
     public function update(Request $request, $id)
     {
         $triage = Triages::findOrFail($id);
@@ -51,21 +46,15 @@ class TriageController extends Controller
 
         $triage->update($validated);
 
-        return response()->json([
-            'message' => 'Triage updated successfully.',
-            'data' => $triage,
-        ]);
+        return redirect()->route('triages.index')->with('success', 'Triage updated successfully.');
     }
 
-    // Destroy - Delete a triage
     public function destroy($id)
     {
         $triage = Triages::findOrFail($id);
         $triage->delete();
 
-        return response()->json([
-            'message' => 'Triage deleted successfully.'
-        ]);
+        return redirect()->route('triages.index')->with('success', 'Triage deleted successfully.');
     }
 }
 

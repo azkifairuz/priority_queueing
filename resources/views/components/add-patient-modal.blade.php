@@ -110,8 +110,37 @@
         </div>
     </div>
 </div>
+<div id="triageModal" class="hidden fixed inset-0 bg-black/50 bg-opacity-50 flex justify-center items-center z-50">
+    <div class="dark:bg-neutral-800 bg-neutral-100 dark:text-white p-6 rounded-lg max-w-xl mx-auto">
+        <h3 id="triageModalTitle" class="text-lg font-semibold mb-4 text-neutral-900 dark:text-white">Add New Triage</h3>
 
+        <form method="POST" id="triageForm">
+            @csrf
+            <input type="hidden" name="_method" id="methodField" value="POST">
+            <input type="hidden" id="triageId">
 
+            <div class="mb-4">
+                <label for="name" class="block text-sm mb-1">Name</label>
+                <input type="text" name="name" id="name" class="form-control" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="priority_score" class="block text-sm mb-1">Priority Score</label>
+                <input type="number" name="priority_score" id="priority_score" class="form-control" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="description" class="block text-sm mb-1">Description</label>
+                <textarea name="description" id="description" class="form-control" rows="3"></textarea>
+            </div>
+
+            <div class="mt-6 flex justify-end gap-2">
+                <button type="button" onclick="closeModal('triageModal')" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">Cancel</button>
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
 <script>
     function openModal(id) {
         console.log(id);
@@ -162,5 +191,29 @@
         document.getElementById("viewPatientAddress").innerText = patient.address || '-';
 
         document.getElementById("viewPatientModal").classList.remove('hidden');
+    }
+    function openTriageForm(mode = 'create', triage = null) {
+        const modal = document.getElementById('triageModal');
+        const title = document.getElementById('triageModalTitle');
+        const form = document.getElementById('triageForm');
+        const methodField = document.getElementById('methodField');
+
+        form.reset();
+        methodField.value = mode === 'edit' ? 'PUT' : 'POST';
+        console.log(triage);
+        
+        if (mode === 'edit' && triage) {
+            title.textContent = 'Edit Triage';
+            form.action = `/admin/triages/${triage.id}`;
+            document.getElementById('triageId').value = triage.id;
+            document.getElementById('name').value = triage.name;
+            document.getElementById('priority_score').value = triage.priority_score;
+            document.getElementById('description').value = triage.description || '';
+        } else {
+            title.textContent = 'Add New Triage';
+            form.action = `/admin/triages`;
+        }
+
+        modal.classList.remove('hidden');
     }
     </script>

@@ -19,13 +19,13 @@ class DashboardController extends Controller
             ->join('triages', 'patient_queues.triage_id', '=', 'triages.id')
             ->orderByDesc('triages.priority_score') 
             ->orderBy('patient_queues.time') 
-            ->where('patient_queues.state','!=','completed') 
+            ->where('patient_queues.state','=','in_progress') 
             ->select('patient_queues.*') 
             ->first();
        
         return view('dashboard/index', [
             'currentQueueNumber' => $currentQueue?->queue,
-            'onProgressCount' => PatientQueue::where('state', 'on_progress')->count(),
+            'onProgressCount' => PatientQueue::where('state', 'in_progress')->count(),
             'newPatientCount' => Patient::whereDate('created_at', today())->count(),
             'todayQueueCount' => PatientQueue::whereDate('date', today())->count(),
             'latestQueues' => PatientQueue::with(['patient', 'triage'])->latest('time')->limit(5)->get(),
@@ -40,6 +40,7 @@ class DashboardController extends Controller
                                 ->orderByDesc('triages.priority_score')
                                 ->orderBy('patient_queues.time')
                                 ->select('patient_queues.*')
+                                ->where('patient_queues.state','!=','completed') 
                                 ->get()
                                 ->load(['patient', 'triage']);
         return view('utama/patient_queue/index', [

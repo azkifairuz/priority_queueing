@@ -28,5 +28,10 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('password'), 
             'role' => 'admin',
         ]);
+        Account::create([
+            'username' => 'perawat',
+            'password' => Hash::make('password'), 
+            'role' => 'perawat',
+        ]);
     }
 }

@@ -68,6 +68,8 @@
                             </td>
                         <td class="px-6 py-4 text-sm">
                             <div class="flex space-x-2">
+                                @if ($queue->state === 'waiting')
+                                {{-- Tampilkan tombol "Progress" --}}
                                 <form action="{{ route('change_state') }}" method="POST">
                                     @csrf
                                     <input type="hidden" name="queue_id" value="{{ $queue->id }}">
@@ -76,16 +78,8 @@
                                         Progress
                                     </button>
                                 </form>
-                        
-                                <form action="{{ route('change_state') }}" method="POST">
-                                    @csrf
-                                    <input type="hidden" name="queue_id" value="{{ $queue->id }}">
-                                    <input type="hidden" name="state" value="completed">
-                                    <button class="bg-green-600 hover:bg-green-700 text-white px-2 py-1 text-xs rounded">
-                                        Done
-                                    </button>
-                                </form>
-                        
+                    
+                                {{-- Tampilkan tombol "Cancel" --}}
                                 <form action="{{ route('change_state') }}" method="POST">
                                     @csrf
                                     <input type="hidden" name="queue_id" value="{{ $queue->id }}">
@@ -94,6 +88,17 @@
                                         Cancel
                                     </button>
                                 </form>
+                            @elseif ($queue->state === 'in_progress')
+                                {{-- Tampilkan tombol "Done" saja --}}
+                                <form action="{{ route('change_state') }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="queue_id" value="{{ $queue->id }}">
+                                    <input type="hidden" name="state" value="completed">
+                                    <button class="bg-green-600 hover:bg-green-700 text-white px-2 py-1 text-xs rounded">
+                                        Done
+                                    </button>
+                                </form>
+                            @endif
                             </div>
                         </td>
                     </tr>
